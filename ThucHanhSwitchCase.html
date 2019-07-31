@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh ngay</title>
+</head>
+<body>
+<input type="text" id="month"/>
+<input type="button" value="Tinh so ngay!!" onclick="TinhSoNgay();"/>
+<div id="display"></div>
+<script>
+function TinhSoNgay() {
+    let thang;
+    do {
+         thang = parseInt(document.getElementById("month").value);
+        if(thang < 1 || thang > 12){
+            alert("nhap vao thang trong khoang 1--->12");
+            document.getElementById("month").value = '';
+        }
+    }while(thang < 1 || thang > 12);
+    let kq;
+    switch (thang) {
+        case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+            kq = '31';
+            break;
+        case 4: case 6: case 9: case 11:
+            kq = '30';
+            break;
+        case 2:
+            kq = '28 hoac 29'
+            break;
+        default:
+            document.getElementById("display").innerHTML = "Moi nhap lai!!!!!";
+    }
+    if(thang >= 1 && thang <= 12)
+    document.getElementById("display").innerHTML = 'thang ' + thang + " co " + kq + ' ngay';
+}
+</script>
+</body>
+</html>
