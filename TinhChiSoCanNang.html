@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tinh chi so can nang</title>
+</head>
+<body>
+<form>
+    Chieu cao: <br/>
+    <input type="text" id="tall"/>
+    <br/>
+    Can nang: <br/>
+    <input type="text" id="height"/>
+    <br/>
+    BMI: <br/>
+    <input type="text" id="valueBMI" readonly/>
+    <br/>
+    Interpretation: <br/>
+    <input type="text" id="xepLoai" readonly/>
+    <br><br/>
+    <input type="button" value="Check" onclick="tinhToan();"/>
+</form>
+<script>
+
+function tinhToan() {
+    let chieuCao = parseFloat(document.getElementById("tall").value);
+    let canNang = parseFloat(document.getElementById("height").value);
+    let bmi = parseFloat(canNang / (chieuCao * chieuCao));
+    let ketQua;
+    if(bmi < 18.5){
+        ketQua = 'UnderWeight';
+    }else if(bmi < 25) {
+        ketQua = 'Normal';
+    }else if(bmi < 30) {
+        ketQua = 'OverWeight';
+    }else {
+        ketQua = 'Obese'
+    }
+    document.getElementById("valueBMI").value = bmi;
+    document.getElementById("xepLoai").value = ketQua;
+}
+</script>
+</body>
+</html>
