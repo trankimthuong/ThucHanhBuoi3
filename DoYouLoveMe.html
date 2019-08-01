@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Do you love me!!!!!</title>
+</head>
+<body>
+<h1>Do you love me?????</h1>
+<input type="button" value="Yes" id="yes" style="width: 50px;height: 25px" onclick="yesMessage();">
+<input type="button" value="No" id="no" style="width: 50px;height: 25px; position: absolute; left = 100px;top = 100px " onmouseover="move();">
+
+<script>
+    let chieuCao = window.innerHeight;
+    let chieuRong = window.innerWidth;
+
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min) ) + min;
+    }
+
+    function yesMessage() {
+        alert("I love you too!!!");
+    }
+
+    function move() {
+        let element = document.getElementById("no");
+
+        element.style.left = getRndInteger(0,chieuRong - parseInt(element.style.width)) + 'px';
+        element.style.top = getRndInteger(0, chieuCao - parseInt(element.style.height)) + 'px';
+
+    }
+
+</script>
+
+</body>
+</html>
