@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let firstValue = '';
+        let secondValue = '';
+        let isOperator = false;
+        let phepToan;
+        let isEqual = false;
+
+        function disPlay(kytu) {
+            if(isOperator){
+                secondValue += kytu;
+                document.getElementById("result").value = secondValue;
+            }
+            else {
+                firstValue += kytu;
+                document.getElementById("result").value = firstValue;
+            }
+        }
+
+        function tinhToan(operand) {
+            isOperator = true;
+            phepToan = operand;
+            if(isEqual) {
+                firstValue = document.getElementById('result').value;
+                secondValue ='';
+                isEqual = false;
+            }
+        }
+
+        function reset() {
+            document.getElementById("result").value = null;
+            firstValue = '';
+            secondValue = '';
+            isOperator = false;
+            phepToan = '';
+            isEqual = false;
+        }
+        function ketqua() {
+            let haThu;
+            if(isEqual == true)
+                firstValue = document.getElementById("result").value;
+            let firstValueInt = parseInt(firstValue);
+            let secondValueInt = parseInt(secondValue);
+
+
+            if (phepToan == '+')
+            haThu = firstValueInt + secondValueInt;
+            if (phepToan == '-')
+                haThu = firstValueInt - secondValueInt;
+            if (phepToan == '*')
+                haThu = firstValueInt * secondValueInt;
+            if (phepToan == '/')
+                haThu = firstValueInt / secondValueInt;
+            document.getElementById("result").value = haThu;
+            isEqual = true;
+            console.log(firstValue);
+            console.log(secondValue);
+            console.log(isEqual);
+        }
+    </script>
+</head>
+<body>
+<fieldset style="width: 40px;">
+    <input style="height: 30px" type="text" id="result"/>
+
+    <button style="width: 40px; height: 30px" value="7" onclick="disPlay('7');">7</button>
+    <button style="width: 40px; height: 30px" value="8" onclick="disPlay('8');">8</button>
+    <button style="width: 40px; height: 30px" value="9" onclick="disPlay('9');">9</button>
+    <button style="width: 40px; height: 30px" value="+" onclick="tinhToan('+');">+</button>
+
+    <button style="width: 40px; height: 30px" value="4" onclick="disPlay('4');">4</button>
+    <button style="width: 40px; height: 30px" value="5" onclick="disPlay('5');">5</button>
+    <button style="width: 40px; height: 30px" value="6" onclick="disPlay('6');">6</button>
+    <button style="width: 40px; height: 30px" value="-" onclick="tinhToan('-');">-</button>
+
+    <button style="width: 40px; height: 30px" value="1" onclick="disPlay('1');">1</button>
+    <button style="width: 40px; height: 30px" value="2" onclick="disPlay('2');">2</button>
+    <button style="width: 40px; height: 30px" value="3" onclick="disPlay('3');">3</button>
+    <button style="width: 40px; height: 30px" value="*" onclick="tinhToan('*');">*</button>
+
+    <button style="width: 40px; height: 30px" value="0" onclick="disPlay('0');">0</button>
+    <button style="width: 40px; height: 30px" onclick="reset();">AC</button>
+    <button style="width: 40px; height: 30px" onclick="ketqua();">=</button>
+    <button style="width: 40px; height: 30px" value="/" onclick="tinhToan('/');">/</button>
+
+</fieldset>
+</body>
+</html>
