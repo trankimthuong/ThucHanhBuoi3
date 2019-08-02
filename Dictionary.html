@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tu dien</title>
+    <script>
+        let a = ["blue", "purple", "yellow", "pink", "red", "gray"];
+        let b = ["mau xanh", "mau tim", "mau vang", "mau hong", "mau do", "mau xam"];
+
+
+
+
+
+        function xuLy() {
+
+            let word = document.getElementById("english").value;
+            let address;
+            for(let i = 0; i < a.length; i++)
+            {
+                if(word == a[i])
+                {
+                    address = i;
+                }
+            }
+
+            document.getElementById("vietnamese").value = b[address];
+        }
+
+    </script>
+</head>
+<body>
+<input type="text" id="english"/>
+<input type="text" id="vietnamese"/>
+<input type="button" value="Search" id="find" onclick="xuLy();"/>
+</body>
+</html>
