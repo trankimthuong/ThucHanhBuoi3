@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Su dung vong lap for</title>
+</head>
+<body>
+
+
+<h1>JavaScript Loops</h1>
+<p id="demo"></p>
+<script>
+    //bai 1:
+    let text ='';
+    for(let i = 0; i <= 9; i++)
+    {
+        text += "The number is " + i + '<br>';
+    }
+    document.getElementById("demo").innerHTML = text;
+
+//bai 2:
+let number = parseInt(prompt("Nhap vao 1 so: "));
+let tong = 0;
+for(var i = 1; i <= number; i++)
+{
+    tong += i;
+}
+alert("Tong = " + tong);
+</script>
+</body>
+</html>
