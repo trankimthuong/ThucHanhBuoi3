@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung dung vui Faking Textarea On Typing</title>
+</head>
+<body onload="doReady()">
+<center>
+    <h1>Type anything slowly</h1>
+    <textarea value="" id="myTextarea" style="width: 300px; height: 150px" readonly></textarea>
+</center>
+<script>
+    let str = "Look at me!!! I'm the most handsome guy at Codegym ^_^";
+    let count = 0;
+function print() {
+    let a = document.getElementById("myTextarea");
+    if(count == str.length)
+    {
+        count = 0;
+        a.value = '';
+    }
+
+    a.value += str[count];
+  console.log(a.value);
+    count++;
+}
+
+function doReady() {
+    window.addEventListener('keydown', print);
+}
+</script>
+</body>
+</html>
