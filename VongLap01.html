@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap vong lap 01</title>
+</head>
+<body>
+<script>
+    /*
+    //bai 1:
+    for(let i = 1; i <= 100; i++)
+    {
+        document.write(i + "<br/>");
+        if(i == 99)
+        alert("Da hoan thanh!!!");
+    }
+     */
+
+    /*
+    //bai 2:
+    let Degree;
+    while(1){
+        Degree = parseInt(prompt("nhap vao nhiet do: "));
+        if(Degree > 100)
+            alert("Yeu cau giam nhiet do!!!");
+        if(Degree < 20)
+            alert("yeu cau tang nhiet do!!!");
+        if(Degree == 0)
+            break;
+    }
+    */
+
+    /*
+    //Bai 3: hien thi day fibonacci
+    let number = parseInt(prompt("Nhap vao so luong so trong day fibonacci can in: "));
+    let count = 2;
+    let f1 = 1;
+    let f2 = 1;
+    let f3;
+    let check = true;
+    if(number == 1){
+        document.write(f1);
+        check = false;
+    }
+    else if(number == 2){
+        document.write(f1 + ' ' + f2);
+        check = false;
+    }
+    else{
+        document.write(f1 + ' ' + f2);
+        while(check){
+            f3 = f2;
+            f2 = f1 + f2;
+            f1 = f3;
+            document.write(' ' +f2);
+            count++;
+            if(count == number)
+                check = false;
+        }
+    }
+    */
+
+
+ /*
+    //Bai 4: tim so dau tien trong day fibonacci chia het cho 5
+    let f1 = 1;
+    let f2 =1;
+    let f3;
+    while(1) {
+        f3 = f2;
+        f2 = f1 + f2;
+        f1 = f3;
+        if (f2 % 5 == 0){
+            alert("so dau tien trong day fibonacci chia het cho 5 la: " + f2);
+            break;
+            }
+    }
+  */
+/*
+ //bai 5: tinh tong n so trong day fibonacci
+    let number = parseInt(prompt("Nhap vao so luong so trong day fibonacci can in: "));
+    let count = 2;
+    let f1 = 1;
+    let f2 = 1;
+    let f3;
+    let check = true;
+    sum = 0;
+    if(number == 1){
+        document.write(f1);
+        sum = 1;
+        check = false;
+    }
+    else if(number == 2){
+        document.write(f1 + ' ' + f2);
+        sum = 2;
+        check = false;
+    }
+    else{
+        sum = 2;
+        document.write(f1 + ' ' + f2);
+        while(check){
+            f3 = f2;
+            f2 = f1 + f2;
+            f1 = f3;
+            document.write(' ' +f2);
+            count++;
+            sum += f2;
+            if(count == number)
+                check = false;
+        }
+    }
+    alert("tong = " + sum);
+*/
+
+/*
+//bai 6: tinh tong 30 so dau tien chia het cho 7:
+    let sumCount = 0;
+    for(let count = 1; count <= 30; count++)
+    {
+        sumCount += count;
+    }
+    alert("Tong 30 so tu nhien dau tien chia het cho 7 la: " + sumCount * 7);
+    */
+
+/*
+//bai 7:
+    for(let i = 1; i < 100; i++)
+    {
+        if(i % 15 == 0)
+        {
+            document.write("FizzBuzz");
+            continue;
+        }
+        if(i % 3 == 0)
+        {
+            document.write("Fizz");
+            continue;
+        }
+        if(i % 5 == 0)
+        {
+            document.write("Buzz");
+            continue;
+        }
+        document.write(i);
+    }
+    */
+
+//bai 8: game doan so:
+    function getRndInteger(min, max) {
+        return Math.floor(Math.random() * (max - min + 1) ) + min;
+    }
+    function btnPlay() {
+        let min = parseInt(prompt("Nhap vao gia tri min ban muon doan: "));
+        let max = parseInt(prompt("Nhap vao gia tri max ban muon doan: "));
+        let random = getRndInteger(min, max);
+        let count = 0;
+        while(count < 3) {
+            let guess = parseInt(prompt("Nhap vao gia tri ban doan: "));
+            if(guess == random)
+            {
+                alert("chuc mung ban da doan dung!!!");
+                break;
+            }
+            else if(guess < random)
+                alert("So ban doan nho hon so can tim!!!");
+            else
+                alert("so ban doan lon hon so can tim!!!")
+            count++;
+        }
+        if(count == 3)
+        {
+            alert("ahihi do ngok, ban da sai ca 3 lan!!!");
+        }
+    }
+</script>
+<button type="text" onclick="btnPlay();">Play!!!</button>
+</body>
+</html>
