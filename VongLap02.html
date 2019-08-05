@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap vong lap 02</title>
+</head>
+<body>
+<script>
+    /*
+    //Bai 1: In day finonacci
+    let number = parseInt(prompt("Nhap vao so luong so trong day fibonacci can in: "));
+    let count = 2;
+    let f1 = 1;
+    let f2 = 1;
+    let f3;
+    let check = true;
+    if(number == 1){
+        document.write(f1);
+        check = false;
+    }
+    else if(number == 2){
+        document.write(f1 + ' ' + f2);
+        check = false;
+    }
+    else{
+        document.write(f1 + ' ' + f2);
+        while(check){
+            f3 = f2;
+            f2 = f1 + f2;
+            f1 = f3;
+            document.write(' ' +f2);
+            count++;
+            if(count == number)
+                check = false;
+        }
+    }
+     */
+
+    /*
+    //bai 2: Tinh giai thua mot so nguyen duong
+    let number = parseInt(prompt("Nhap vao so nguyen duong bat ky: "));
+    let giaiThua = 1;
+    for(let i = 1; i <= number; i++)
+    {
+        giaiThua *= i;
+    }
+    alert("Giai thua cua n bang: " + giaiThua);
+     */
+
+    /*
+    //bai 3: in tam giac vuong
+    let a = parseInt(prompt("Nhap vao do dai canh a: "));
+    for(let i = 1; i <= a; i++)
+    {
+        for(let j = 1; j <= i; j++)
+        {
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+    document.write("<br/><br/>");
+
+    for(let i = a; i >= 1; i--)
+    {
+        for(let j = 1; j <= i; j++)
+        {
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+    document.write("<br/><br/>");
+
+    for(let i = 1; i <= a; i++)
+    {
+        for(let j = 1; j <= (a - i); j++)
+        {
+            document.write("&nbsp&nbsp");
+        }
+        for(let j = 1; j <= i; j++)
+        {
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+    document.write("<br/><br/>");
+
+
+    for(let i = a; i >= 1; i--)
+    {
+        for(let j = 1; j <= (a - i); j++)
+        {
+            document.write("&nbsp&nbsp");
+        }
+        for(let j = 1; j <= i; j++)
+        {
+            document.write("*");
+        }
+        document.write("<br/>");
+    }
+    document.write("<br/><br/>");
+     */
+
+    /*
+    //bai 4: in hinh chu nhat
+    let a = parseInt(prompt("Nhap vao chieu dai canh ngang: "));
+    let b = parseInt(prompt("Nhap vao chieu dai canh doc: "));
+
+    for(let i = 1; i <= b; i++)
+    {
+       if(i == 1 || i == b)
+       {
+           for(let j = 1; j <= a; j++)
+               document.write("*");
+       }
+       else{
+           document.write("*");
+           for (let j = 2; j < a; j++)
+           {
+               document.write("&nbsp&nbsp");
+           }
+           document.write("*");
+       }
+       document.write("<br/>");
+    }
+     */
+
+    /*
+    //bai 5:
+    let soTienBanDau = parseFloat(prompt("Nhap vao so tien ban dau gui: "));
+    let soThang = parseInt(prompt("Nhap vao so thang gui: "));
+    let laiSuatHangThang = parseFloat(prompt("Nhap vao lai suat hang thang: "));
+    let tongTien = soTienBanDau * Math.pow(laiSuatHangThang, soThang);
+    alert("Tong tien nhan duoc la: " + tongTien);
+    */
+
+    //bai 6:vẽ hình trái tim
+    let a, b;
+    let size;
+    do{
+    size = parseInt(prompt("Nhap vao gia tri size (gia tri le): "));
+    if(size % 2 == 0)
+        alert("ban phai nhap so le!!!!");
+     }while(size % 2 == 0);
+    for (a = (size+1)/2; a <= size; a = a+2) {
+        for (b = 1; b <= (size + 1 - a) / 2; b++) {
+            document.write("&nbsp&nbsp");
+        }
+        for (b = 1; b <= a; b++) {
+            document.write("*");
+        }
+        for (b = 1; b <= size - a; b++){
+            document.write("&nbsp&nbsp");
+        }
+        for (b = 1; b <= a; b++) {
+            document.write("*");
+        }
+            document.write("<br/>");
+        }
+
+    for (a = size; a >= 0; a--)
+    {
+        for (b = a; b < size; b++)
+            document.write("&nbsp&nbsp");
+        for (b = 1; b <= ((a * 2) + 1); b++)
+            document.write("*");
+
+        document.write("<br/>");
+    }
+
+</script>
+</body>
+</html>
