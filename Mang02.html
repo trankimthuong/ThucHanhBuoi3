@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Luyen tap mang 02</title>
+</head>
+<body>
+<script>
+    /*
+    //bai 1:
+    let a = [
+        [1, 2, 1, 24],
+        [8, 11, 9, 4],
+        [7, 0, 7, 27],
+        [7, 4, 28, 14],
+        [3, 10, 26, 7]
+    ];
+    for(let i in a)
+    {
+        document.write("row " + i +"<br/>")
+        for (let j in a[i])
+        {
+            document.write(a[i][j] + "<br/>");
+        }
+    }
+     */
+
+    /*
+    //Bai 2:
+    let arr = new Array('c', 's', 'c', '2', '6', '1');
+    document.write("Mang ban dau la: " + arr.toString());
+    for(let i = 0; i < arr.length/2; i++)
+    {
+        let temp = arr[i];
+        arr[i] = arr[arr.length - 1 - i];
+        arr[arr.length - 1 - i] = temp;
+    }
+    document.write("<br/>Mang sau khi thay doi la: " + arr.toString());
+*/
+    /*
+    //bai 3:
+    let arr = new Array('a','B','c','1','0','2','9','I','Z','z','5','1');
+    let number = "0123456789";
+    let count = 0;
+    document.write("Mang ban dau la: " + arr.toString());
+    for(let i in arr)
+    {
+        if(number.indexOf(arr[i]) != -1)
+        {
+            document.write("<br/>" + arr[i]);
+            count++;
+        }
+    }
+    document.write("<br/>So ky tu so trong mang la: " + count);
+    */
+
+    /*
+    //Bai 4: Dem so tu trong 1 chuoi
+    let str = prompt("Nhap vao mot chuoi bat ky: ");
+    str = str.trim();
+    let count = 1;
+    document.write("Chuoi da nhap la: " + str.toString());
+    for(let i = 0; i < str.length; i++)
+    {
+        if((str[i] == ' ') && (str[i+1] != ' '))
+        {
+            count++;
+            document.write("<br/>"+i);
+        }
+    }
+    document.write("<br/>So tu trong chuoi da nhap la: " + count);
+*/
+
+/*
+    //bai 5: so sanh 2 chuoi
+    let strFirst = prompt("Nhap vao chuoi thu nhat: ");
+    let strSecond = prompt("Nhap vao chuoi thu hai: ");
+    let check = true;
+    document.write("chuoi thu nhat la: " + strFirst.toString());
+    document.write("<br/>chuoi thu hai la: " + strSecond.toString())
+
+    if(strFirst.length != strSecond.length)
+    {
+        check = false;
+    }
+    else
+    {
+        for(let i = 0; i < strFirst.length;i++)
+        {
+            if(strFirst[i] != strSecond[i])
+            {
+                check = false;
+                break;
+            }
+        }
+    }
+    if(check)
+        document.write("<br/>2 chuoi nay giong nhau!!!!");
+    else
+        document.write("<br/>2 chuoi nay khong giong nhau!!!!");
+ */
+
+//bai 6:
+    let char = new Array();
+    let check = false;
+
+    for(let i = 0; i < 10; i++)
+    {
+        char[i] = prompt("Nhap vao ki tu bat ki cho char[" + i + "]:");
+    }
+    document.write("Mang ky tu ban dau la: " + char.toString());
+    for(let i = 0; i < 10; i++)
+    {
+        if(char[i] == '-')
+        {
+            char[i] = '_';
+        }
+    }
+    document.write("<br/>Mang ky tu sau khi thay doi la: " + char.toString());
+
+</script>
+</body>
+</html>
