@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game caro basic</title>
+
+    <h3>Caro game simple</h3>
+    <p id="carogame"/>
+    <input type="button" value="Change value" onclick="changeValue();"/>
+
+    <script>
+
+    let arr = [];
+    let data = '';
+    let temp = document.getElementById("carogame");
+    for(let i = 0; i < 5; i++)
+    {
+        arr[i] = new Array(0, 0, 0, 0, 0);
+    }
+
+    for(let i = 0; i < 5; i++)
+    {
+        data += '<br/>';
+        for(let j = 0; j < 5; j++)
+        {
+            data += arr[i][j];
+            data += '&nbsp&nbsp';
+        }
+    }
+
+    data += '<br/><br/><input type="button" value="Change value" onclick="changeValue();"/>'
+    temp.innerHTML = data;
+
+    function changeValue() {
+        let addX = parseInt(prompt("Nhap vao gia tri toa do x: "));
+        let addY = parseInt(prompt("Nhap vao gia tri toa do y: "));
+        arr[addX][addY] = 'x';
+        data = '';
+        for(let i = 0; i < 5; i++)
+        {
+            data += '<br/>'
+            for(let j = 0; j < 5; j++)
+            {
+                data += arr[i][j];
+                data += "&nbsp&nbsp";
+            }
+        }
+        data += '<br/><br/><input type="button" value="Change value" onclick="changeValue();"/>';
+        temp.innerHTML = data;
+    }
+
+
+
+    </script>
+</head>
+<body>
+</body>
+</html>
