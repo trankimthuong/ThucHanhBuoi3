@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tic Tac Toe</title>
+    <h3>Tic Tac Toe</h3>
+    <p id="ticTacToe"></p>
+    <input type="button" value="Change Value" onclick="changeValue();"/>
+    <input type="button" value="Start" onclick="startGame();"/>
+
+    <script>
+        let arr = [];
+        let check;
+        let data;
+        let temp = document.getElementById("ticTacToe");
+        let turn;
+
+
+        function startGame() {
+            data = '';
+            turn = 0;
+            check = false;
+            for(let i = 0; i < 5; i++)
+            {
+                arr[i] = new Array('.', '.', '.', '.', '.');
+            }
+            for(let i = 0; i < 5; i++)
+            {
+                data += '<br/>';
+                for(let j = 0; j < 5; j++) {
+                    data += arr[i][j];
+                    data += "&nbsp&nbsp&nbsp&nbsp";
+                }
+            }
+            temp.innerHTML = data;
+        }
+
+        function changeValue() {
+            let addX;
+            let addY;
+            data = '';
+            turn++;
+            if(turn % 2 == 1)
+            {
+                addX = parseInt(prompt("Nguoi choi 1 nhap vao toa do x: "));
+                addY = parseInt(prompt("Nguoi choi 1 nhap vao toa do y: "));
+                arr[addX][addY] = 'X';
+            }
+            else
+            {
+                addX = parseInt(prompt("Nguoi choi 2 nhap vao toa do x: "));
+                addY = parseInt(prompt("Nguoi choi 2 nhap vao toa do y: "));
+                arr[addX][addY] = 'O';
+            }
+
+            for (let i = 0; i < 5; i++)
+            {
+                data += '<br/>';
+                for(let j = 0; j < 5; j++)
+                {
+                    data += arr[i][j];
+                    data += '&nbsp&nbsp';
+                    if (arr[i][j] == '.') {
+                        data += "&nbsp&nbsp";
+                    }
+                }
+            }
+            temp.innerHTML = data;
+            for(let i = 0; i < 5; i++)
+            {
+                for (let j = 0; j < 3; j++)
+                {
+                    if(arr[i][j] == arr[i][j + 1] && arr[i][j+1] == arr[i][j+2] && arr[i][j] != '.')
+                    {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
+            for(let i = 0; i < 3; i++)
+            {
+                for (let j = 0; j < 5; j++)
+                {
+                    if(arr[i][j] == arr[i+1][j] && arr[i+1][j] == arr[i+2][j] && arr[i][j] != '.')
+                    {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
+            for(let i = 0; i < 3; i++)
+            {
+                for (let j = 0; j < 3; j++)
+                {
+                    if(arr[i][j] == arr[i+1][j+1] && arr[i+1][j+1] == arr[i+2][j+2] && arr[i][j] != '.')
+                    {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+
+            for(let i = 4; i >= 2; i--)
+            {
+                for (let j = 0; j < 3; j++)
+                {
+                    if(arr[i][j] == arr[i-1][j+1] && arr[i-1][j+1] == arr[i-2][j+2] && arr[i][j] != '.')
+                    {
+                        check = true;
+                        break;
+                    }
+                }
+            }
+            if(check)
+            {
+                console.log("true");
+                console.log(turn);
+                if(turn % 2)
+                    alert("chuc mung nguoi choi thu 1 da chien thang");
+                else
+                    alert("Chuc mung nguoi choi thu 2 da chien thang");
+                startGame();
+            }
+        }
+
+    </script>
+
+</head>
+<body>
+</body>
+</html>
